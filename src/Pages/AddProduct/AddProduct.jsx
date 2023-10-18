@@ -5,6 +5,10 @@ const AddProduct = () => {
         <div>
 
             <Navbar></Navbar>
+
+            <section className="mt-10">
+                <h1>Hello world</h1>
+            </section>
             
         </div>
     );
