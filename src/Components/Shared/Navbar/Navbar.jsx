@@ -55,7 +55,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <a className="cursor-pointer"> <img  className="w-[120px]" src={logo} alt="" /> </a>
+        <a className="cursor-pointer"> <img  className="w-[120px]" src={logo} alt="logo image" /> </a>
 
       </div>
       <div className="navbar-center hidden lg:flex">
