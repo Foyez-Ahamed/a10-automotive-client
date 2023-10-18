@@ -1,17 +1,26 @@
 import { Link } from "react-router-dom";
 
+const Brands = ({ brand }) => {
+  const { _id, name, photo } = brand;
 
-const Brands = () => {
-    return (
-        <div className="mt-10">
+  return (
+    <div className="mt-10">
 
-            <div className="text-center space-y-4">
-                <Link to='/brands'><h1 className="text-4xl font-bold">Our Vehicle Fleet</h1></Link>
-                <p>Driving your dreams to reality with an exquisite fleet of versatile vehicles for unforgettable journeys.</p>
-            </div>
-            
+      <div className="shadow-md rounded-md">
+        <figure>
+          <img
+            className="h-[200px] w-full object-cover rounded-md"
+            src={photo}
+            alt="brands"
+          />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title"> Brand : {name}</h2>
         </div>
-    );
+      </div>
+
+    </div>
+  );
 };
 
 export default Brands;
