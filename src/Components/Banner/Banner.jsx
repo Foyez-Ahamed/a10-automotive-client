@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div>
 
-            <section className="flex flex-col-reverse md:flex-col-reverse lg:flex-row justify-between items-center gap-6">
+            <section className="flex flex-col-reverse md:flex-col-reverse lg:flex-row justify-between items-center gap-6 px-2 lg:px-4">
 
                 <div className="flex-1 space-y-5">
                 <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold">Explore the world with <span className="text-[#E02C6D]">comfortable cars !</span></h1>

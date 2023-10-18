@@ -1,4 +1,5 @@
 import Banner from "../../Components/Banner/Banner";
+import Brands from "../../Components/Brands/Brands";
 import Navbar from "../../Components/Shared/Navbar/Navbar";
 
 const Home = () => {
@@ -8,6 +9,8 @@ const Home = () => {
             <Navbar></Navbar>
              
              <Banner></Banner>
+
+             <Brands></Brands>
             
         </div>
     );
