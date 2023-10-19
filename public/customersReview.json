@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "description": "I have been using Rentaly for my Car Rental needs for over 5 years now. I have never had any problems with their service. Their customer support is always responsive and helpful. I would recommend Rentaly to anyone looking for a reliable Car Rental provider.",
+        "image": "https://i.ibb.co/HYRyjct/matthew-hamilton-t-NCH0s-KSZb-A-unsplash.jpg",
+        "customer_name": "Sadie Sink"
+    },
+    {
+        "id": 2,
+        "description": "We have been using Rentaly for our trips needs for several years now and have always been happy with their service. Their customer support is Excellent Service! and they are always available to help with any issues we have. Their prices are also very competitive.",
+        "image": "https://i.ibb.co/YhsLyGk/ajin-k-s-TEua7-UCKlto-unsplash.jpg",
+        "customer_name": "Jane Smith"
+    },
+    {
+        "id": 3,
+        "description": "Endorsed by industry experts, Rentaly is the Car Rental solution you can trust. With years of experience in the field, we provide fast, reliable and secure Car Rental services.",
+        "image": "https://i.ibb.co/CMvwkhL/wendell-fernandes-Aiaamj-U8-UY-unsplash.jpg",
+        "customer_name": "Alice Johnson"
+    }
+]

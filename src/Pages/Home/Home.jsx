@@ -3,6 +3,7 @@ import Banner from "../../Components/Banner/Banner";
 import Brands from "../../Components/Brands/Brands";
 import Footer from "../../Components/Footer/Footer";
 import CustomersSatisfaction from "../../Components/CustomersSatisfaction/CustomersSatisfaction";
+import CustomersReview from "../../Components/CustomersReview/CustomersReview";
 
 const Home = () => {
 
@@ -33,6 +34,12 @@ const Home = () => {
 
              <div className="mt-10 bg-gray-100">
                 <CustomersSatisfaction></CustomersSatisfaction>
+             </div>
+
+             <div className="mt-10">
+
+                <CustomersReview></CustomersReview>
+
              </div>
 
              <div className="mt-10">
