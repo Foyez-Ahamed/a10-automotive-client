@@ -78,7 +78,7 @@ className={({ isActive, isPending }) =>
 
 </section>
    
-   <h1 className="text-center text-white py-3"> <p>Copyright © 2023 - All right reserved by Automotive care</p></h1>
+   <h1 className="text-center text-white py-3 px-2"> <p>Copyright © 2023 - All right reserved by Automotive care</p></h1>
         </footer>
 
         

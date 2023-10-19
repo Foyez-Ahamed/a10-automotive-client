@@ -1,7 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../../Components/Banner/Banner";
 import Brands from "../../Components/Brands/Brands";
-import Navbar from "../../Components/Shared/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 
 const Home = () => {
@@ -12,7 +11,7 @@ const Home = () => {
     return (
         <div>
 
-            <Navbar></Navbar>
+          
              
              <Banner></Banner>
 

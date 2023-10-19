@@ -1,35 +1,39 @@
-const AddProduct = () => {
-  const handleAddProduct = (e) => {
-    e.preventDefault();
 
-    const form = e.target;
 
-    const image = form.image.value;
-    const name = form.name.value;
-    const rating = form.rating.value;
-    const brandName = form.brandName.value;
-    const type = form.type.value;
-    const price = form.price.value;
-    const description = form.description.value;
+const UpdateProduct = () => {
 
-    const addProduct = {image, name, rating, brandName, type, price, description};
+    const handleUpdateProduct = e => {
 
-    console.log(addProduct);
-  };
+        e.preventDefault();
 
-  return (
-    <div>
-      <section className="flex justify-center items-center w-full md:w-full lg:w-3/4 shadow-xl rounded-xl p-3 mx-auto bg-gray-100">
+        const form = e.target;
+
+        const image = form.image.value;
+        const name = form.name.value;
+        const rating = form.rating.value;
+        const brandName = form.brandName.value;
+        const type = form.type.value;
+        const price = form.price.value;
+
+        // console.log(image, name, rating, brandName, type, price, description);
+
+    }
+
+    return (
+        <div>
+
+<section className="flex justify-center items-center w-full md:w-full lg:w-3/4 shadow-xl rounded-xl p-3 mx-auto bg-gray-100">
         <div>
           {/* main div */}
 
           <div>
-            <h1 className="text-center text-4xl font-medium">Add Product</h1>
+            <h1 className="text-center text-4xl font-medium">Update Product</h1>
           </div>
 
           {/* form */}
           <div className="mt-10">
-            <form onSubmit={handleAddProduct}>
+            <form onSubmit={handleUpdateProduct}>
+
               <div className="flex flex-col md:flex-col lg:flex-row gap-6">
                 <div className="form-control">
                   <label>Image</label>
@@ -55,18 +59,12 @@ const AddProduct = () => {
               <div className="flex flex-col md:flex-col lg:flex-row gap-6 mt-3">
                 <div className="form-control">
                   <label>Brand Name</label>
-                  <select
+                  <input
+                    type="text"
+                    placeholder="Brand Name"
                     name="brandName"
-                    className="input mt-2 w-full md:w-[390px] lg:w-[390px]"
-                  >
-                     <option value="">Select a Brand</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Ford">Ford</option>
-                    <option value="BMW">BMW</option>
-                    <option value="Mercedes-Benz">Mercedes-Benz</option>
-                    <option value="Tesla">Tesla</option>
-                    <option value="Honda">Honda</option>
-                  </select>
+                    className="input mt-2  w-full md:w-[390px] lg:w-[390px]"
+                  />{" "}
                 </div>
 
                 <div className="form-control">
@@ -80,6 +78,7 @@ const AddProduct = () => {
                 </div>
               </div>
 
+
               <div className="flex flex-col md:flex-col lg:flex-row gap-6 mt-3">
                 <div className="form-control">
                   <label>Price</label>
@@ -91,18 +90,7 @@ const AddProduct = () => {
                   />{" "}
                 </div>
 
-                <div className="form-control">
-                  <label>Short Description</label>
-                  <input
-                    type="text"
-                    placeholder="Short Description"
-                    name="description"
-                    className="input mt-2  w-full md:w-[390px] lg:w-[390px]"
-                  />{" "}
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-col lg:flex-row gap-6 mt-3">
+                <div className="flex flex-col md:flex-col lg:flex-row gap-6 mt-3">
                 <div className="form-control">
                   <label>Rating</label>
                   <input
@@ -113,18 +101,22 @@ const AddProduct = () => {
                   />{" "}
                 </div>
               </div>
+              </div>
+
+              
 
               {/* add button */}
               <div className="form-control mt-4">
                 <label>
                   <input
                     type="submit"
-                    value="Add Product"
+                    value="Update Product"
                     placeholder="Enter photo url"
                     className="input input-bordered w-full bg-[#E02C6D] text-white font-bold"
                   />
                 </label>
               </div>
+
             </form>
           </div>
           {/* form */}
@@ -132,8 +124,9 @@ const AddProduct = () => {
           {/* main div */}
         </div>
       </section>
-    </div>
-  );
+            
+        </div>
+    );
 };
 
-export default AddProduct;
+export default UpdateProduct;

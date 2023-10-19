@@ -15,7 +15,7 @@ const Brands = ({ brand }) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title"> Brand : {name}</h2>
+          <h2 className="card-title">{name}</h2>
         </div>
       </div>
 

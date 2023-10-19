@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AiOutlineMenu } from 'react-icons/ai';
 import logo from "../../../assets/logo (2).png";
 
@@ -55,7 +55,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <a className="cursor-pointer"> <img  className="w-[120px]" src={logo} alt="logo image" /> </a>
+        <Link to='/'><a className="cursor-pointer"> <img  className="w-[120px]" src={logo} alt="logo image" /> </a></Link>
 
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -102,7 +102,7 @@ const Navbar = () => {
 
 
       <div className="navbar-end">
-        <a className=" px-4 py-1 md:py-2 lg:py-2  rounded-md bg-[#E02C6D] text-white text-[16px] font-medium">Sign In</a>
+        <Link to='/signIn'><a className=" px-4 py-1 md:py-2 lg:py-2  rounded-md bg-[#E02C6D] text-white text-[16px] font-medium">Sign In</a></Link>
       </div>
     </div>
     );

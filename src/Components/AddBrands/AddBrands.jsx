@@ -1,4 +1,4 @@
-import Navbar from "../Shared/Navbar/Navbar";
+
 import Swal from 'sweetalert2'
 const AddBrands = () => {
 
@@ -35,7 +35,7 @@ const AddBrands = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
+      
 
       <div className="flex justify-center items-center">
         <div className="shadow-xl p-8 md:w-[450px] lg:w-[450px] rounded-xl">

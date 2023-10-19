@@ -6,6 +6,8 @@ import MyCart from "../Pages/MyCart/MyCart";
 import SignIn from "../Pages/SignIn/SignIn";
 import AddBrands from "../Components/AddBrands/AddBrands";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import SignUp from "../Pages/SignUp/SignUp";
+import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 
 const MyCreatedRouter = createBrowserRouter([
     {
@@ -27,8 +29,16 @@ const MyCreatedRouter = createBrowserRouter([
                 element:<AddProduct></AddProduct>
             },
             {
+                path:"updateProduct",
+                element:<UpdateProduct></UpdateProduct>
+            },
+            {
                 path:'/myCart',
                 element:<MyCart></MyCart>
+            },
+            {
+                path:'/signUp',
+                element: <SignUp></SignUp>
             },
             {
                 path:'/signIn',
