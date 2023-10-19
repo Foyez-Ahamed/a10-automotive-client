@@ -49,7 +49,7 @@ const BrandCategory = () => {
           </div>
            
           <div className="absolute top-[30%] left-[15%] md:left-[30%] lg:left-[25%] ">
-          <h2 className="lg:text-4xl font-bold"><span className="text-[#E02C6D]"> 30% off</span> for All Category product !</h2>
+          <h2 className="lg:text-4xl font-bold"><span className="text-[#E02C6D]"> 30% off !</span> Excellent Service!</h2>
            <div className="flex justify-center items-center lg:mt-8">
            <button className="px-6 py-3 bg-[#E02C6D] text-white font-bold rounded-md">See details</button>
            </div>
@@ -73,7 +73,7 @@ const BrandCategory = () => {
           </div>
            
           <div className="absolute top-[30%] left-[15%] md:left-[30%] lg:left-[25%] ">
-          <h2 className="lg:text-4xl font-bold"><span className="text-[#E02C6D]"> 30% off</span> for All Category product !</h2>
+          <h2 className="lg:text-4xl font-bold"><span className="text-[#E02C6D]"> 30% off </span> 24/7 road assistance</h2>
            <div className="flex justify-center items-center lg:mt-8">
            <button className="px-6 py-3 bg-[#E02C6D] text-white font-bold rounded-md">See details</button>
            </div>

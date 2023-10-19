@@ -27,7 +27,7 @@ const BrandCategories = ({ categoryProduct }) => {
             <p>Rating : 5/{rating}</p>
            </div>
           <div className="card-actions mt-6 ">
-            <button className="px-4 py-1 bg-gray-500 rounded-md text-white font-medium">Details</button>
+            <Link to={`/productDetails/${_id}`}><button className="px-4 py-1 bg-gray-500 rounded-md text-white font-medium">Details</button></Link>
 
             <Link to='/updateProduct'><button className="px-4 py-1 bg-gray-500 rounded-md text-white font-medium">Update</button></Link>
             
