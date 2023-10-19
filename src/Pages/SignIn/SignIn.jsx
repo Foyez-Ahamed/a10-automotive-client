@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FcGoogle } from 'react-icons/fc';
 import { useState } from "react";
 
 
@@ -46,7 +47,7 @@ const SignIn = () => {
 </div>
 </form>
 
-{/* <button onClick={() => handleGoogleLogin(providerGoogle)} className= " bg-[#403F3F] flex gap-2 justify-center items-center w-full py-3 rounded-md mt-5 text-white hover:bg-[#FF900E] text-[15px] font-medium uppercase">Login with <FcGoogle className="text-xl"></FcGoogle></button> */}
+<button className= " bg-[#403F3F] flex gap-2 justify-center items-center w-full py-3 rounded-md mt-5 text-white hover:bg-[#E02C6D] text-[15px] font-medium uppercase">Sign in with <FcGoogle className="text-xl"></FcGoogle></button>
 
 
 

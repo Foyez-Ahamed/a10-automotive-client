@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../../Components/Banner/Banner";
 import Brands from "../../Components/Brands/Brands";
 import Footer from "../../Components/Footer/Footer";
+import CustomersSatisfaction from "../../Components/CustomersSatisfaction/CustomersSatisfaction";
 
 const Home = () => {
 
@@ -28,6 +29,10 @@ const Home = () => {
                 }
                 </div>
 
+             </div>
+
+             <div className="mt-10 bg-gray-100">
+                <CustomersSatisfaction></CustomersSatisfaction>
              </div>
 
              <div className="mt-10">

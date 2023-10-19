@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import carousel1 from "../../assets/carousel1.jpg";
 import carouselTwo from "../../assets/carousel2.jpg"
 import carouselThree from "../../assets/carousel3 (2).jpg"
@@ -28,7 +28,7 @@ const BrandCategory = () => {
           <div className="absolute top-[30%] left-[15%] md:left-[30%] lg:left-[25%] ">
           <h2 className="lg:text-4xl font-bold"><span className="text-[#E02C6D]"> 30% off</span> for All Category product !</h2>
            <div className="flex justify-center items-center lg:mt-8">
-           <button className="px-6 py-3 bg-[#E02C6D] text-white font-bold rounded-md">See details</button>
+          <Link > <button className="px-6 py-3 bg-[#E02C6D] text-white font-bold rounded-md">See details</button></Link>
            </div>
         </div>
 
