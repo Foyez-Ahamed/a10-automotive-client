@@ -1,16 +1,11 @@
 
 
-
-
-const MyCart = () => {
-    
+const BrandCategories = () => {
     return (
         <div>
-    
-          
             
         </div>
     );
 };
 
-export default MyCart;
+export default BrandCategories;

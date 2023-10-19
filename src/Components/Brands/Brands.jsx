@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Brands = ({ brand }) => {
-  const { _id, name, photo } = brand;
+  const { name, photo } = brand;
 
   return (
     <div className="mt-10">
@@ -15,7 +15,7 @@ const Brands = ({ brand }) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{name}</h2>
+          <Link to={`/brandCategory/${name}`}><h2 className="card-title">{name}</h2></Link>
         </div>
       </div>
 
