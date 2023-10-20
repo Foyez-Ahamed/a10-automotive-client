@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
@@ -12,6 +12,9 @@ const SignUp = () => {
   const [showPassIcon, setShowPassIcon] = useState(false);
 
   const { userSignUp } = useContext(AuthContext);
+
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -40,8 +43,10 @@ const SignUp = () => {
     }
 
     userSignUp(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        e.target.reset();
+        toast.success('Successfully registration')
+        navigate( location?.state? location.state : '/')
         updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photoUrl
@@ -49,8 +54,8 @@ const SignUp = () => {
         .then()
         .catch()
       })
-      .catch((error) => {
-        console.log(error.message);
+      .catch(() => {
+
       });
   };
 
