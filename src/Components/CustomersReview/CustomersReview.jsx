@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BsArrow90DegRight, BsArrow90DegLeft } from 'react-icons/bs';
+import { BsArrow90DegRight, } from 'react-icons/bs';
 
 
 const CustomersReview = () => {
