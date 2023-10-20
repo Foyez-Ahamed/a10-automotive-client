@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
-import { getAuth } from "firebase/auth";
+import { getAuth, updateProfile } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 
 const auth = getAuth(app);
@@ -17,7 +17,7 @@ const SignUp = () => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
-    const photoURL = form.get("photoURL");
+    const photoUrl = form.get("photoURL");
     const email = form.get("email");
     const password = form.get("password");
     const accepted = e.target.terms.checked;
@@ -42,6 +42,12 @@ const SignUp = () => {
     userSignUp(email, password)
       .then((result) => {
         console.log(result.user);
+        updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photoUrl
+        })
+        .then()
+        .catch()
       })
       .catch((error) => {
         console.log(error.message);
