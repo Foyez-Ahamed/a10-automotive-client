@@ -1,16 +1,23 @@
 import { Link } from "react-router-dom";
-import errorPic from "../../../src/assets/404.gif"
 
 const ErrorPage = () => {
     return (
-        <div className="flex justify-center items-center">
+        <div>
 
-            <div>
-            <img className="object-cover" src={errorPic} alt="" />
-            <h1 className="text-4xl text-center font-bold text-red-600">Page Not Found ! <Link to='/'><button className="bg-gray-500 px-6 text-white rounded-md py-2 text-xl">Go Home</button></Link></h1>
-            </div>
+        <section className="flex justify-center items-center mt-32">
             
-        </div>
+            <div>
+            <h1 className="text-xl md:text-2xl lg:text-7xl text-red-600">404 Not Found</h1>
+
+            <p className="text-center mt-8 lg:text-xl">oops ! Not found data on this route</p>
+
+            <Link to='/' className="mt-7 block text-center underline text-blue-500">Go Home</Link>
+
+            </div>
+
+        </section>
+        
+    </div>
     );
 };
 

@@ -1,6 +1,12 @@
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const UpdateProduct = () => {
+
+  const products = useLoaderData();
+  
+  const {_id, image, name, rating, brandName, type, price} = products || {};
 
     const handleUpdateProduct = e => {
 
@@ -15,7 +21,28 @@ const UpdateProduct = () => {
         const type = form.type.value;
         const price = form.price.value;
 
-        // console.log(image, name, rating, brandName, type, price, description);
+        const updateProduct = {image, name, rating, brandName, type, price}
+
+        console.log(updateProduct);
+
+        fetch(`http://localhost:5000/product/${_id}`, {
+          method:'PUT',
+          headers: {
+            'content-type' : 'application/json'
+          },
+          body: JSON.stringify(updateProduct)
+        })
+        .then(res => res.json())
+        .then(data => {
+          if(data.modifiedCount > 0){
+            Swal.fire({
+                title: 'success!',
+                text: 'Product updated successfully',
+                icon: 'success',
+                confirmButtonText: 'Thanks'
+              })
+        }
+        })
 
     }
 
@@ -39,6 +66,7 @@ const UpdateProduct = () => {
                   <label>Image</label>
                   <input
                     type="text"
+                    defaultValue={image}
                     placeholder="Image url.."
                     name="image"
                     className="input mt-2 w-full md:w-[390px] lg:w-[390px]"
@@ -49,6 +77,7 @@ const UpdateProduct = () => {
                   <label>Name</label>
                   <input
                     type="text"
+                    defaultValue={name}
                     placeholder="Name"
                     name="name"
                     className="input mt-2  w-full md:w-[390px] lg:w-[390px]"
@@ -61,6 +90,7 @@ const UpdateProduct = () => {
                   <label>Brand Name</label>
                   <input
                     type="text"
+                    defaultValue={brandName}
                     placeholder="Brand Name"
                     name="brandName"
                     className="input mt-2  w-full md:w-[390px] lg:w-[390px]"
@@ -72,6 +102,7 @@ const UpdateProduct = () => {
                   <input
                     type="text"
                     placeholder="Type "
+                    defaultValue={type}
                     name="type"
                     className="input mt-2  w-full md:w-[390px] lg:w-[390px]"
                   />{" "}
@@ -84,6 +115,7 @@ const UpdateProduct = () => {
                   <label>Price</label>
                   <input
                     type="text"
+                    defaultValue={price}
                     placeholder="Price"
                     name="price"
                     className="input mt-2 w-full md:w-[390px] lg:w-[390px]"
@@ -95,6 +127,7 @@ const UpdateProduct = () => {
                   <label>Rating</label>
                   <input
                     type="text"
+                    defaultValue={rating}
                     placeholder="Rating"
                     name="rating"
                     className="input mt-2  w-full md:w-[390px] lg:w-[390px]"

@@ -29,7 +29,7 @@ const BrandCategories = ({ categoryProduct }) => {
           <div className="card-actions mt-6 ">
             <Link to={`/productDetails/${_id}`}><button className="px-4 py-1 bg-gray-500 rounded-md text-white font-medium">Details</button></Link>
 
-            <Link to='/updateProduct'><button className="px-4 py-1 bg-gray-500 rounded-md text-white font-medium">Update</button></Link>
+            <Link to={`/updateProduct/${_id}`} ><button className="px-4 py-1 bg-gray-500 rounded-md text-white font-medium">Update</button></Link>
             
           </div>
         </div>
