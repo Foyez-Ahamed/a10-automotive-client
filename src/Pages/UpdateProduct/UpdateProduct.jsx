@@ -110,7 +110,7 @@ const UpdateProduct = () => {
                 <label>
                   <input
                     type="submit"
-                    value="Update Product"
+                    value="Submit"
                     placeholder="Enter photo url"
                     className="input input-bordered w-full bg-[#E02C6D] text-white font-bold"
                   />
