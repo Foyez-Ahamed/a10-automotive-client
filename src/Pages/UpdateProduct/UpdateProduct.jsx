@@ -54,7 +54,7 @@ const UpdateProduct = () => {
           {/* main div */}
 
           <div>
-            <h1 className="text-center text-4xl font-medium">Update Product</h1>
+            <h1 className="text-center text-4xl font-medium">Update Produc</h1>
           </div>
 
           {/* form */}
