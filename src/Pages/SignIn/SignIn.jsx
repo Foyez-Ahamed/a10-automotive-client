@@ -30,18 +30,16 @@ const SignIn = () => {
     })
 
     .catch(error => {
-        toast.error('Invalid email or password! Please check i !', error)
+        toast.error('Invalid email or password! Please check it !', error)
     })
   }
 
   const handleGoogleSignIn = (googleSignIn) => {
      googleSignIn()
-     .then(result => {
-        console.log(result);
+     .then(() => {
+        toast.success('Sign In successfully')
      })
-     .catch(error => {
-        console.log(error);
-     })
+     .catch();
   }
 
   return (
