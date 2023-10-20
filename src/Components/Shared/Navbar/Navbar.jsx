@@ -1,8 +1,26 @@
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineMenu } from 'react-icons/ai';
 import logo from "../../../assets/logo (2).png";
+import { useContext } from "react";
+import { AuthContext } from "../../../provider/AuthProvider";
 
 const Navbar = () => {
+
+    const {user, userSignOut} = useContext(AuthContext);
+
+    const handleSignOut = () => {
+       userSignOut()
+       .then(result => {
+        console.log(result);
+       })
+
+       .catch(error => {
+        console.log(error.message);
+       })
+    }
+    
+
+
     return (
         <div className="navbar bg-base-100">
           <div className="navbar-start">
@@ -102,7 +120,33 @@ const Navbar = () => {
 
 
       <div className="navbar-end">
-        <Link to='/signIn'><a className=" px-4 py-1 md:py-2 lg:py-2  rounded-md bg-[#E02C6D] text-white text-[16px] font-medium">Sign In</a></Link>
+      
+      {
+        user?.email ?  <>
+                     
+        <div className="dropdown dropdown-end">
+        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+       <div className="w-10 rounded-full">
+        <img src= {user.photoURL} />
+       </div>
+        </label>
+       <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+       <li>
+        <a className="justify-between">
+         {user.displayName}
+        </a>
+        </li>
+        <li><a>{user.email}</a></li>
+        <li><a onClick={handleSignOut}>SignOut</a></li>
+       </ul>
+      </div>
+        </> : 
+       
+       <Link to='/signIn'><a className=" px-4 py-1 md:py-2 lg:py-2  rounded-md bg-[#E02C6D] text-white text-[16px] font-medium">Sign In</a></Link>
+        
+      }
+
+        
       </div>
     </div>
     );
