@@ -1,14 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const SignIn = () => {
 
   const [showPassIcon, setShowPassIcon] = useState(false);
 
   const {userSignIn, userGoogleSignIn} = useContext(AuthContext);
+
+  const location = useLocation();
+  const navigate = useNavigate();
   
 
   const handleSignIn = e => {
@@ -19,12 +23,14 @@ const SignIn = () => {
     const password = form.get('password')
 
     userSignIn(email, password) 
-    .then(result => {
-        console.log(result.user);
+    .then(() => {
+       e.target.reset();
+       toast.success('Sign In successfully')
+       navigate(location.state? location.state : '/');
     })
 
     .catch(error => {
-        console.log(error.message);
+        toast.error('Invalid email or password! Please check it !', error)
     })
   }
 

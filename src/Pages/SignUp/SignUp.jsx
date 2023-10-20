@@ -45,7 +45,7 @@ const SignUp = () => {
     userSignUp(email, password)
       .then(() => {
         e.target.reset();
-        toast.success('Successfully registration')
+        toast.success('Successfully Sign Up')
         navigate( location?.state? location.state : '/')
         updateProfile(auth.currentUser, {
             displayName: name,
@@ -54,9 +54,7 @@ const SignUp = () => {
         .then()
         .catch()
       })
-      .catch(() => {
-
-      });
+      .catch()
   };
 
   return (

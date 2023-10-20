@@ -3,6 +3,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import logo from "../../../assets/logo (2).png";
 import { useContext } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
 
@@ -10,13 +11,10 @@ const Navbar = () => {
 
     const handleSignOut = () => {
        userSignOut()
-       .then(result => {
-        console.log(result);
+       .then(() => {
+         toast.success('Sign out successfully');
        })
-
-       .catch(error => {
-        console.log(error.message);
-       })
+       .catch()
     }
     
 
