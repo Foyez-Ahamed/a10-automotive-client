@@ -28,6 +28,16 @@ const SignIn = () => {
     })
   }
 
+  const handleGoogleSignIn = (googleSignIn) => {
+     googleSignIn()
+     .then(result => {
+        console.log(result);
+     })
+     .catch(error => {
+        console.log(error);
+     })
+  }
+
   return (
     <div>
       <div className="flex justify-center items-center">
@@ -76,7 +86,7 @@ const SignIn = () => {
             </div>
           </form>
 
-          <button className=" bg-[#403F3F] flex gap-2 justify-center items-center w-full py-3 rounded-md mt-5 text-white hover:bg-[#E02C6D] text-[15px] font-medium uppercase">
+          <button onClick={() => handleGoogleSignIn(userGoogleSignIn)} className=" bg-[#403F3F] flex gap-2 justify-center items-center w-full py-3 rounded-md mt-5 text-white hover:bg-[#E02C6D] text-[15px] font-medium uppercase">
             Sign in with <FcGoogle className="text-xl"></FcGoogle>
           </button>
 
