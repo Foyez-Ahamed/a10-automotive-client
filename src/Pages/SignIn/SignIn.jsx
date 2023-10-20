@@ -8,7 +8,7 @@ const SignIn = () => {
 
   const [showPassIcon, setShowPassIcon] = useState(false);
 
-  const {userSignIn} = useContext(AuthContext);
+  const {userSignIn, userGoogleSignIn} = useContext(AuthContext);
   
 
   const handleSignIn = e => {
@@ -26,8 +26,6 @@ const SignIn = () => {
     .catch(error => {
         console.log(error.message);
     })
-
-    
   }
 
   return (
