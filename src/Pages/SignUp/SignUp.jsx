@@ -26,7 +26,7 @@ const SignUp = () => {
     const accepted = e.target.terms.checked;
 
     if (password.length < 6) {
-      toast.error("Your passwor must have at least 6 character!");
+      toast.error("Your password must have at least 6 character!");
       return;
     } else if (
       !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(
