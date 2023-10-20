@@ -30,7 +30,7 @@ const SignIn = () => {
     })
 
     .catch(error => {
-        toast.error('Invalid email or password! Please check it !', error)
+        toast.error('Invalid email or password! Please check i !', error)
     })
   }
 
