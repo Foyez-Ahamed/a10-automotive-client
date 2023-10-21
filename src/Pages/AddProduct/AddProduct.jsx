@@ -18,7 +18,7 @@ const AddProduct = () => {
 
     console.log(addProduct);
 
-    fetch('https://automotive-server-site-6fjlltnn5-foyez-ahameds-projects.vercel.app/brandsCategory', {
+    fetch('https://automotive-server-site-sigma.vercel.app/brandsCategory', {
       method:'POST',
       headers: {
         'content-type' : 'application/json'
@@ -43,7 +43,7 @@ const AddProduct = () => {
 
   return (
     <div>
-      <section className="flex justify-center items-center w-full md:w-full lg:w-3/4 shadow-xl rounded-xl p-3 mx-auto bg-gray-100">
+      <section className="flex justify-center items-center w-full md:w-full lg:w-3/4 shadow-xl rounded-xl p-3 mx-auto bg-gray-100 dark:bg-black">
         <div>
           {/* main div */}
 
@@ -81,7 +81,7 @@ const AddProduct = () => {
                   <label>Brand Name</label>
                   <select
                     name="brandName"
-                    className="input mt-2 w-full md:w-[390px] lg:w-[390px]"
+                    className="input mt-2 w-full md:w-[390px] lg:w-[390px] dark:text-black"
                   >
                      <option value="">Select a Brand</option>
                     <option value="Toyota">Toyota</option>

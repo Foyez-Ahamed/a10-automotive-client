@@ -4,7 +4,7 @@ const CustomersSatisfaction = () => {
     return (
         <div>
 
-            <section className="flex flex-col lg:flex-row justify-between gap-6">
+            <section className="flex flex-col lg:flex-row justify-between gap-6 dark:bg-black">
 
                 <div className="flex-1">
 
@@ -12,7 +12,7 @@ const CustomersSatisfaction = () => {
 
                 </div>
 
-                <div className="flex-1 mt-3 ml-5 space-y-4">
+                <div className="flex-1 mt-3 ml-5 space-y-4 ">
                     <h1 className="text-4xl  font-bold">Only Quality For <br /> <span className="text-[#E02C6D]">Clients</span></h1>
                     
                      <div className="flex gap-4">

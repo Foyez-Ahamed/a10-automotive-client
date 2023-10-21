@@ -6,7 +6,7 @@ const BrandCategories = ({ categoryProduct }) => {
 
   return (
     <div>
-      <div className="card bg-base-100 shadow-xl">
+      <div className="card dark:bg-black bg-base-100 shadow-xl">
         <figure>
           <img
             src= {image}

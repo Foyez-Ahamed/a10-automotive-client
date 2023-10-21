@@ -23,7 +23,7 @@ const UpdateProduct = () => {
 
         const updateProduct = {image, name, rating, brandName, type, price}
 
-        fetch(`https://automotive-server-site-6fjlltnn5-foyez-ahameds-projects.vercel.app/product/${_id}`, {
+        fetch(`https://automotive-server-site-sigma.vercel.app/product/${_id}`, {
           method:'PUT',
           headers: {
             'content-type' : 'application/json'
@@ -47,12 +47,12 @@ const UpdateProduct = () => {
     return (
         <div>
 
-<section className="flex justify-center items-center w-full md:w-full lg:w-3/4 shadow-xl rounded-xl p-3 mx-auto bg-gray-100">
+<section className="flex justify-center items-center w-full md:w-full lg:w-3/4 shadow-xl rounded-xl p-3 mx-auto bg-gray-100 dark:bg-black">
         <div>
           {/* main div */}
 
           <div>
-            <h1 className="text-center text-4xl font-medium">Update Produc</h1>
+            <h1 className="text-center text-4xl font-medium">Update Product</h1>
           </div>
 
           {/* form */}
@@ -67,7 +67,7 @@ const UpdateProduct = () => {
                     defaultValue={image}
                     placeholder="Image url.."
                     name="image"
-                    className="input mt-2 w-full md:w-[390px] lg:w-[390px]"
+                    className="input mt-2 w-full md:w-[390px] lg:w-[390px] dark:text-black"
                   />{" "}
                 </div>
 
@@ -78,7 +78,7 @@ const UpdateProduct = () => {
                     defaultValue={name}
                     placeholder="Name"
                     name="name"
-                    className="input mt-2  w-full md:w-[390px] lg:w-[390px]"
+                    className="input mt-2  w-full md:w-[390px] lg:w-[390px] dark:text-black"
                   />{" "}
                 </div>
               </div>
@@ -91,7 +91,7 @@ const UpdateProduct = () => {
                     defaultValue={brandName}
                     placeholder="Brand Name"
                     name="brandName"
-                    className="input mt-2  w-full md:w-[390px] lg:w-[390px]"
+                    className="input mt-2  w-full md:w-[390px] lg:w-[390px] dark:text-black"
                   />{" "}
                 </div>
 
@@ -102,7 +102,7 @@ const UpdateProduct = () => {
                     placeholder="Type "
                     defaultValue={type}
                     name="type"
-                    className="input mt-2  w-full md:w-[390px] lg:w-[390px]"
+                    className="input mt-2  w-full md:w-[390px] lg:w-[390px] dark:text-black"
                   />{" "}
                 </div>
               </div>
@@ -116,7 +116,7 @@ const UpdateProduct = () => {
                     defaultValue={price}
                     placeholder="Price"
                     name="price"
-                    className="input mt-2 w-full md:w-[390px] lg:w-[390px]"
+                    className="input mt-2 w-full md:w-[390px] lg:w-[390px] dark:text-black"
                   />{" "}
                 </div>
 
@@ -128,7 +128,7 @@ const UpdateProduct = () => {
                     defaultValue={rating}
                     placeholder="Rating"
                     name="rating"
-                    className="input mt-2  w-full md:w-[390px] lg:w-[390px]"
+                    className="input mt-2  w-full md:w-[390px] lg:w-[390px] dark:text-black"
                   />{" "}
                 </div>
               </div>

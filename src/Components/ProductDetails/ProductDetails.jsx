@@ -18,7 +18,7 @@ const ProductDetails = () => {
      
      const addToCart = {userEmail, products};
      
-     fetch('https://automotive-server-site-6fjlltnn5-foyez-ahameds-projects.vercel.app/addToCart',{
+     fetch('https://automotive-server-site-sigma.vercel.app/addToCart',{
       method: 'POST',
       headers: {
         'content-type' : 'application/json'

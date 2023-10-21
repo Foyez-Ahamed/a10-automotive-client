@@ -1,13 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineMenu } from 'react-icons/ai';
 import logo from "../../../assets/logo (2).png";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
 
-    const {user, userSignOut} = useContext(AuthContext);
+    const {user, userSignOut } = useContext(AuthContext);
 
     const handleSignOut = () => {
        userSignOut()
@@ -16,11 +16,36 @@ const Navbar = () => {
        })
        .catch()
     }
+
+
+  const [theme, setTheme] = useState(null);
+
+  useEffect(() => {
+    
+    if(window.matchMedia('(prefers-color-scheme: white)').matches){
+      setTheme('dark');
+    }
+    else {
+      setTheme('light');
+    }
+  }, [])
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
     
 
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar">
           <div className="navbar-start">
           <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -28,7 +53,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-y-4 font-medium"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow dark:text-black bg-base-100 rounded-box w-52 space-y-4 font-medium"
           >
             <NavLink
               to="/"
@@ -67,6 +92,11 @@ const Navbar = () => {
             }
           >
             <li>My Cart</li>
+          </NavLink>
+
+          <NavLink
+          >
+            <li onClick={handleThemeSwitch} className="text-[16px] lg:ml-4">Dark Mode</li>
           </NavLink>
           </ul>
         </div>
@@ -113,11 +143,19 @@ const Navbar = () => {
           >
             <li className="text-[16px] ml-4">My Cart</li>
           </NavLink>
+
+
+          <NavLink
+           >
+            <li onClick={handleThemeSwitch} className="text-[16px] ml-4"> Dark Mode  </li>
+          </NavLink>
+
+  
         </ul>
       </div>
 
 
-      <div className="navbar-end">
+      <div className="navbar-end dark:bg-black dark:text-black">
       
       {
         user?.email ?  <>
@@ -140,12 +178,10 @@ const Navbar = () => {
       </div>
         </> : 
        
-       <Link to='/signIn'><a className=" px-4 py-1 md:py-2 lg:py-2  rounded-md bg-[#E02C6D] text-white text-[16px] font-medium">Sign In</a></Link>
+       <Link to='/signIn'><a className=" px-4 py-2 md:py-2 lg:py-2  rounded-md bg-[#E02C6D] text-white text-[16px] font-medium">Sign In</a></Link>
         
       }
       
-       <button>Dark Mode</button>
-        
       </div>
     </div>
     );

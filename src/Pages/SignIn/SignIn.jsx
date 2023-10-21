@@ -45,7 +45,7 @@ const SignIn = () => {
   return (
     <div>
       <div className="flex justify-center items-center">
-        <div className="shadow-xl p-8 w-full md:w-[450px] lg:w-[450px] rounded-xl bg-gray-100">
+        <div className="shadow-xl p-8 w-full md:w-[450px] lg:w-[450px] rounded-xl bg-gray-100 dark:text-black">
           <div>
             <h1 className="text-center font-medium text-3xl text-[#403F3F] mb-6">
               {" "}

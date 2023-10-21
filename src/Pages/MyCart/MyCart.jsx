@@ -20,7 +20,7 @@ const MyCart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`https://automotive-server-site-6fjlltnn5-foyez-ahameds-projects.vercel.app/addToCart/${_id}`, {
+        fetch(`https://automotive-server-site-sigma.vercel.app/addToCart/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -39,12 +39,12 @@ const MyCart = () => {
   
 
   return (
-    <div>
+    <div className="h-screen">
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 mt-10 gap-6">
         {carts.map((cart) => (
           <div
             key={cart._id}
-            className="card card-compact bg-base-100 shadow-xl"
+            className="card card-compact bg-base-100 dark:bg-black shadow-xl"
           >
             <figure>
               <img src={cart.products.image} alt="Shoes" />

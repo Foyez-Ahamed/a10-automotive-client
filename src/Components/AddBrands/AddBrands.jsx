@@ -12,7 +12,7 @@ const AddBrands = () => {
 
         const addBrands = {name, photo};
 
-        fetch('https://automotive-server-site-6fjlltnn5-foyez-ahameds-projects.vercel.app/brands', {
+        fetch('https://automotive-server-site-sigma.vercel.app/brands', {
             method:'POST',
             headers: {
                 'content-type' : 'application/json'
