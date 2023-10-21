@@ -1,11 +1,9 @@
 <h3> Website name : Automotive Care </h3>
 
- <h3>Website Live Link : <a href=""> https://social-events-management-925e1.web.app/ </a></h3>
+ <h3>Website Live Link : <a href=""> https://automotive-client-site.web.app/ </a></h3>
 
 
  <h1>Website features blew : </h1>
-
- <h1>Features : </h1>
  <ul>
     <li> On navbar you can see the website name with logo, Home, Add Product, My Cart, and Sign in pages </li>
     <li>Add product and my cart pages are private route if you not sign in you cannot see add product and my cart route. </li>
