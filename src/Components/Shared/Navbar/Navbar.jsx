@@ -135,7 +135,7 @@ const Navbar = () => {
         </a>
         </li>
         <li><a>{user.email}</a></li>
-        <li><a onClick={handleSignOut}>SignOut</a></li>
+        <li><a onClick={handleSignOut}>Sign Out</a></li>
        </ul>
       </div>
         </> : 
@@ -143,7 +143,8 @@ const Navbar = () => {
        <Link to='/signIn'><a className=" px-4 py-1 md:py-2 lg:py-2  rounded-md bg-[#E02C6D] text-white text-[16px] font-medium">Sign In</a></Link>
         
       }
-
+      
+       <button>Dark Mode</button>
         
       </div>
     </div>
