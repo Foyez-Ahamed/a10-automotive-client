@@ -1,53 +1,53 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
 const UpdateProduct = () => {
-
   const products = useLoaderData();
-  
-  const {_id, image, name, rating, brandName, type, price} = products || {};
 
-    const handleUpdateProduct = e => {
+  const navigate = useNavigate();
 
-        e.preventDefault();
+  const { _id, image, name, rating, brandName, type, price } = products || {};
 
-        const form = e.target;
+  const handleUpdateProduct = (e) => {
+    e.preventDefault();
 
-        const image = form.image.value;
-        const name = form.name.value;
-        const rating = form.rating.value;
-        const brandName = form.brandName.value;
-        const type = form.type.value;
-        const price = form.price.value;
+    const form = e.target;
 
-        const updateProduct = {image, name, rating, brandName, type, price}
+    const image = form.image.value;
+    const name = form.name.value;
+    const rating = form.rating.value;
+    const brandName = form.brandName.value;
+    const type = form.type.value;
+    const price = form.price.value;
 
-        fetch(`http://localhost:5000/product/${_id}`, {
-          method:'PUT',
-          headers: {
-            'content-type' : 'application/json'
-          },
-          body: JSON.stringify(updateProduct)
-        })
-        .then(res => res.json())
-        .then(data => {
-          if(data.modifiedCount > 0){
-            Swal.fire({
-                title: 'success!',
-                text: 'Product updated successfully',
-                icon: 'success',
-                confirmButtonText: 'Thanks'
-              })
+    const updateProduct = { image, name, rating, brandName, type, price };
+
+    fetch(`http://localhost:5000/product/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            position: "top",
+            icon: "success",
+            title: `${name} updated successfully`,
+            showConfirmButton: false,
+            timer: 1500
+          });
+
+          navigate(`/brandCategory/${brandName}`);
         }
-        })
+      });
+  };
 
-    }
-
-    return (
-        <div>
-
-<section className="flex justify-center items-center w-full md:w-full lg:w-3/4 shadow-xl rounded-xl p-3 mx-auto bg-gray-100 dark:bg-black">
+  return (
+    <div>
+      <section className="flex justify-center items-center w-full md:w-full lg:w-3/4 shadow-xl rounded-xl p-3 mx-auto bg-gray-100 dark:bg-black">
         <div>
           {/* main div */}
 
@@ -58,7 +58,6 @@ const UpdateProduct = () => {
           {/* form */}
           <div className="mt-10">
             <form onSubmit={handleUpdateProduct}>
-
               <div className="flex flex-col md:flex-col lg:flex-row gap-6">
                 <div className="form-control">
                   <label>Image</label>
@@ -107,7 +106,6 @@ const UpdateProduct = () => {
                 </div>
               </div>
 
-
               <div className="flex flex-col md:flex-col lg:flex-row gap-6 mt-3">
                 <div className="form-control">
                   <label>Price</label>
@@ -121,33 +119,30 @@ const UpdateProduct = () => {
                 </div>
 
                 <div className="flex flex-col md:flex-col lg:flex-row gap-6 mt-3">
-                <div className="form-control">
-                  <label>Rating</label>
-                  <input
-                    type="text"
-                    defaultValue={rating}
-                    placeholder="Rating"
-                    name="rating"
-                    className="input mt-2  w-full md:w-[390px] lg:w-[390px] dark:text-black"
-                  />{" "}
+                  <div className="form-control">
+                    <label>Rating</label>
+                    <input
+                      type="text"
+                      defaultValue={rating}
+                      placeholder="Rating"
+                      name="rating"
+                      className="input mt-2  w-full md:w-[390px] lg:w-[390px] dark:text-black"
+                    />{" "}
+                  </div>
                 </div>
               </div>
-              </div>
-
-              
 
               {/* add button */}
               <div className="form-control mt-4">
                 <label>
                   <input
                     type="submit"
-                    value="Submit"
+                    value="UPDATE"
                     placeholder="Enter photo url"
                     className="input input-bordered w-full bg-[#E02C6D] text-white font-bold"
                   />
                 </label>
               </div>
-
             </form>
           </div>
           {/* form */}
@@ -155,9 +150,8 @@ const UpdateProduct = () => {
           {/* main div */}
         </div>
       </section>
-            
-        </div>
-    );
+    </div>
+  );
 };
 
 export default UpdateProduct;
