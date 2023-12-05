@@ -1,11 +1,16 @@
-import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAddToCart from "../../hooks/useAddToCart";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const MyCart = () => {
-  const loadedCarts = useLoaderData();
 
-  const [carts, setCarts] = useState(loadedCarts);
+  // const loadedCarts = useLoaderData();
+
+  // const [carts, setCarts] = useState(loadedCarts);
+
+  const [carts, refetch] = useAddToCart();
+
+  const axiosPublic = useAxiosPublic();
 
   const handleDelete = (_id) => {
     
@@ -20,24 +25,47 @@ const MyCart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`http://localhost:5000/addToCart/${_id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount > 0) {
-              Swal.fire({
-                position: "top",
-                icon: "success",
-                title: "Deleted successfully",
-                showConfirmButton: false,
-                timer: 1500
-              });
+        // fetch(`http://localhost:5000/addToCart/${_id}`, {
+        //   method: "DELETE",
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     if (data.deletedCount > 0) {
+        //       Swal.fire({
+        //         position: "top",
+        //         icon: "success",
+        //         title: "Deleted successfully",
+        //         showConfirmButton: false,
+        //         timer: 1500
+        //       });
 
-              const remaining = carts.filter(cart => cart._id !== _id);
-               setCarts(remaining);
-            }
+        //       const remaining = carts.filter(cart => cart._id !== _id);
+        //        setCarts(remaining);
+        //     }
+
+
+        //   });
+
+
+       axiosPublic.delete(`/addToCart/${_id}`)
+       .then(res => {
+        console.log(res.data);
+
+        if(res.data.deletedCount > 0) {
+          Swal.fire({
+            position: "top",
+            icon: "success",
+            title: "Deleted successfully",
+            showConfirmButton: false,
+            timer: 1500
           });
+        }
+
+        refetch();
+
+       })
+
+
       }
     });
   };
