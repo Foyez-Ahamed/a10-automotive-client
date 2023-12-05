@@ -24,7 +24,7 @@ const BrandCategories = ({ categoryProduct }) => {
           <p className="font-medium">Type : {type}</p>
            <div className="flex flex-col lg:flex-row justify-between gap-2 font-medium">
             <p>Price : {price}</p>
-            <p>Rating : 5/{rating}</p>
+            <p>{rating}</p>
            </div>
           <div className="card-actions mt-6 ">
             <Link to={`/productDetails/${_id}`}><button className="px-4 py-1 bg-gray-500 rounded-md text-white font-medium">Details</button></Link>

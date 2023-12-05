@@ -18,7 +18,7 @@ const AddProduct = () => {
 
     console.log(addProduct);
 
-    fetch('https://automotive-server-site-sigma.vercel.app/brandsCategory', {
+    fetch('http://localhost:5000/brandsCategory', {
       method:'POST',
       headers: {
         'content-type' : 'application/json'
