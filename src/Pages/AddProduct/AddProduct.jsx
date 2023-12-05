@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddProduct = () => {
+
+  const navigate = useNavigate();
+
   const handleAddProduct = (e) => {
     e.preventDefault();
 
@@ -38,6 +42,7 @@ const AddProduct = () => {
     }
 
     form.reset();
+    navigate('/');
     })
   };
 
