@@ -4,10 +4,13 @@ import logo from "../../../assets/logo (2).png";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
 import toast from "react-hot-toast";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const Navbar = () => {
 
     const {user, userSignOut } = useContext(AuthContext);
+
+    const [theme, setTheme] = useState(null);
 
     const handleSignOut = () => {
        userSignOut()
@@ -16,9 +19,6 @@ const Navbar = () => {
        })
        .catch()
     }
-
-
-  const [theme, setTheme] = useState(null);
 
   useEffect(() => {
     
@@ -53,7 +53,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow dark:text-black bg-base-100 rounded-box w-52 space-y-4 font-medium"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow dark:text-black bg-base-100 rounded-box w-52 space-y-4 font-medium uppercase"
           >
             <NavLink
               to="/"
@@ -94,18 +94,21 @@ const Navbar = () => {
             <li>My Cart</li>
           </NavLink>
 
-          <NavLink
+          {/* <NavLink
           >
-            <li onClick={handleThemeSwitch} className="text-[16px] lg:ml-4">Dark Mode</li>
-          </NavLink>
+            <li onClick={handleThemeSwitch} className="text-[16px] lg:ml-4"> {theme === 'dark' ? <FaSun></FaSun> : <FaMoon></FaMoon> } </li>
+          </NavLink> */}
+
           </ul>
         </div>
 
         <Link to='/'><a className="cursor-pointer"> <img  className="w-[120px]" src={logo} alt="logo image" /> </a></Link>
 
+        <button onClick={handleThemeSwitch} className="text-[16px] ml-4">{theme === 'dark' ? <FaSun className="text-xl"></FaSun> : <FaMoon className="text-xl"></FaMoon> }</button>
+
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 font-medium">
+        <ul className="menu menu-horizontal px-1 font-medium uppercase">
           <NavLink
             to="/"
             className={({ isActive, isPending }) =>
@@ -145,10 +148,10 @@ const Navbar = () => {
           </NavLink>
 
 
-          <NavLink
+          {/* <NavLink
            >
-            <li onClick={handleThemeSwitch} className="text-[16px] ml-4"> Dark Mode  </li>
-          </NavLink>
+            
+          </NavLink> */}
 
   
         </ul>
