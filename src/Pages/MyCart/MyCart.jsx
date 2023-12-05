@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import useAddToCart from "../../hooks/useAddToCart";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import Marquee from "react-fast-marquee";
 
 const MyCart = () => {
 
@@ -74,11 +75,16 @@ const MyCart = () => {
 
   return (
     <div className="h-screen">
+
+      {
+        !carts.length && <Marquee><div className="mt-10 text-2xl text-red-500"> Empty cart, Please added Car!😑</div></Marquee>
+      }
+
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 mt-10 gap-6">
         {carts.map((cart) => (
           <div
             key={cart._id}
-            className="card card-compact bg-base-100 dark:bg-black shadow-xl"
+            className="card card-compact bg-base-100 dark:bg-zinc-900 shadow-xl"
           >
             <figure>
               <img className="lg:h-[250px] w-full object-cover" src={cart.products.image} alt="cars" />

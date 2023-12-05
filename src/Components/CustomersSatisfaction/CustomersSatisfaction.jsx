@@ -4,7 +4,7 @@ const CustomersSatisfaction = () => {
     return (
         <div>
 
-            <section className="flex flex-col lg:flex-row justify-between gap-6 dark:bg-black">
+            <section className="flex flex-col lg:flex-row justify-between gap-6 dark:bg-zinc-900">
 
                 <div className="flex-1">
 

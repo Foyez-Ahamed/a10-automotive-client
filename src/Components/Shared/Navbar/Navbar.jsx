@@ -158,7 +158,7 @@ const Navbar = () => {
       </div>
 
 
-      <div className="navbar-end dark:bg-black dark:text-black">
+      <div className="navbar-end dark:bg-zinc-900 dark:text-black">
       
       {
         user?.email ?  <>
