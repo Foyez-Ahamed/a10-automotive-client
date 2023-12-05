@@ -11,7 +11,7 @@ const MyCart = () => {
     
     Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "Want to delete it!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -26,7 +26,13 @@ const MyCart = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              Swal.fire({
+                position: "top",
+                icon: "success",
+                title: "Deleted successfully",
+                showConfirmButton: false,
+                timer: 1500
+              });
 
               const remaining = carts.filter(cart => cart._id !== _id);
                setCarts(remaining);
@@ -47,14 +53,14 @@ const MyCart = () => {
             className="card card-compact bg-base-100 dark:bg-black shadow-xl"
           >
             <figure>
-              <img src={cart.products.image} alt="Shoes" />
+              <img className="lg:h-[250px] w-full object-cover" src={cart.products.image} alt="cars" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{cart.products.name}</h2>
               <div className="card-actions justify-start">
                 <button
                   onClick={() => handleDelete(cart._id)}
-                  className="btn btn-primary"
+                  className="btn bg-[#E02C6D] text-white hover:text-black"
                 >
                   Delete
                 </button>

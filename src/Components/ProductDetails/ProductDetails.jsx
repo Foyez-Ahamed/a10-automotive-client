@@ -8,13 +8,13 @@ const ProductDetails = () => {
   const {user} = useContext(AuthContext);
 
   const details = useLoaderData();
-  const { image, name, description, price, type } = details || {};
+  const { _id, image, name, description, price, type } = details || {};
 
   const handleAddToCart = () => {
      
-     const userEmail = user.email;
+     const userEmail = user?.email;
 
-     const products = {image, name, description, price, type, details}
+     const products = { _id, image, name, description, price, type, details}
      
      const addToCart = {userEmail, products};
      
@@ -27,7 +27,7 @@ const ProductDetails = () => {
      })
      .then(res => res.json())
      .then(data => {
-      console.log(data);
+     
       if(data.insertedId){
         Swal.fire({
             title: 'success!',
@@ -35,6 +35,16 @@ const ProductDetails = () => {
             icon: 'success',
             confirmButtonText: 'Thanks!'
           })
+    }
+
+    else{
+      Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "You have already added this car !",
+        showConfirmButton: false,
+        timer: 1500
+      });
     }
      })
   }
@@ -45,11 +55,11 @@ const ProductDetails = () => {
       <section className="flex flex-col lg:flex-row justify-between gap-6 ">
         <div className="flex-1 ">
 
-            <img className="w-full h-full" src={image} alt="" />
+            <img className="w-full h-full rounded-md" src={image} alt="" />
 
         </div>
 
-        <div className="flex-1 mt-10 space-y-6">
+        <div className="flex-1 space-y-6">
             <h1 className="text-3xl">{name}</h1>
             <p>{type}</p>
             <p>{description}</p>
