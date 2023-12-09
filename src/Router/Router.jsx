@@ -24,17 +24,17 @@ const MyCreatedRouter = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/brands')
+                loader: () => fetch('https://automotive-server-site-sigma.vercel.app/brands')
             },
             {
                 path:'/brandCategory/:brandName',
                 element: <BrandCategory></BrandCategory>,
-                loader: ({params}) => fetch(`http://localhost:5000/brandsCategory/${params.brandName}`)
+                loader: ({params}) => fetch(`https://automotive-server-site-sigma.vercel.app/brandsCategory/${params.brandName}`)
             },
             {
                 path: '/productDetails/:id',
                 element: <PrivateProductDetails> <ProductDetails></ProductDetails> </PrivateProductDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://automotive-server-site-sigma.vercel.app/product/${params.id}`)
             },
             {
                 path:'/brands',
@@ -47,12 +47,12 @@ const MyCreatedRouter = createBrowserRouter([
             {
                 path:"updateProduct/:id",
                 element:<PrivateUpdate> <UpdateProduct></UpdateProduct> </PrivateUpdate>,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://automotive-server-site-sigma.vercel.app/product/${params.id}`)
             },
             {
                 path:'/myCart',
                 element:<PrivateMyCart><MyCart></MyCart></PrivateMyCart>,
-                // loader: () => fetch('http://localhost:5000/addToCart')
+                // loader: () => fetch('https://automotive-server-site-sigma.vercel.app/addToCart')
             },
             {
                 path:'/signUp',

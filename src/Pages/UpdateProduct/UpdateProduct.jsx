@@ -22,7 +22,7 @@ const UpdateProduct = () => {
 
     const updateProduct = { image, name, rating, brandName, type, price };
 
-    fetch(`http://localhost:5000/product/${_id}`, {
+    fetch(`https://automotive-server-site-sigma.vercel.app/product/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

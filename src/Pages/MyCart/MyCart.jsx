@@ -26,7 +26,7 @@ const MyCart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        // fetch(`http://localhost:5000/addToCart/${_id}`, {
+        // fetch(`https://automotive-server-site-sigma.vercel.app/addToCart/${_id}`, {
         //   method: "DELETE",
         // })
         //   .then((res) => res.json())
