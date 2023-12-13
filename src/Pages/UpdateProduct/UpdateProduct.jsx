@@ -22,7 +22,7 @@ const UpdateProduct = () => {
 
     const updateProduct = { image, name, rating, brandName, type, price };
 
-    fetch(`https://automotive-server-site-sigma.vercel.app/product/${_id}`, {
+    fetch(`http://localhost:5000/product/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -51,9 +51,9 @@ const UpdateProduct = () => {
         <div>
           {/* main div */}
 
-          <div>
+          {/* <div>
             <h1 className="text-center text-4xl font-medium">Update Product</h1>
-          </div>
+          </div> */}
 
           {/* form */}
           <div className="mt-10">
@@ -137,7 +137,7 @@ const UpdateProduct = () => {
                 <label>
                   <input
                     type="submit"
-                    value="UPDATE"
+                    value="UPDATE CAR"
                     placeholder="Enter photo url"
                     className="input input-bordered w-full bg-[#E02C6D] text-white font-bold"
                   />

@@ -14,6 +14,7 @@ import PrivateAddProduct from "../PrivateRoute/PrivateAddProduct/PrivateAddProdu
 import PrivateProductDetails from "../PrivateRoute/PrivateProductDetails/PrivateProductDetails";
 import PrivateUpdate from "../PrivateRoute/PrivateUpdate/PrivateUpdate";
 import PrivateMyCart from "../PrivateRoute/PrivateMyCart/PrivateMyCart";
+import AllCars from "../Components/AllCars/AllCars";
 
 const MyCreatedRouter = createBrowserRouter([
     {
@@ -24,22 +25,28 @@ const MyCreatedRouter = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://automotive-server-site-sigma.vercel.app/brands')
+                loader: () => fetch('http://localhost:5000/brands')
             },
             {
                 path:'/brandCategory/:brandName',
                 element: <BrandCategory></BrandCategory>,
-                loader: ({params}) => fetch(`https://automotive-server-site-sigma.vercel.app/brandsCategory/${params.brandName}`)
+                loader: ({params}) => fetch(`http://localhost:5000/brandsCategory/${params.brandName}`)
             },
             {
                 path: '/productDetails/:id',
                 element: <PrivateProductDetails> <ProductDetails></ProductDetails> </PrivateProductDetails>,
-                loader: ({params}) => fetch(`https://automotive-server-site-sigma.vercel.app/product/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
             },
             {
                 path:'/brands',
                 element:<AddBrands></AddBrands>
             },
+             
+             {
+                path : '/brandCategory',
+                element : <BrandCategory></BrandCategory>
+             },
+
             {
                 path:'/addProduct',
                 element: <PrivateAddProduct> <AddProduct></AddProduct> </PrivateAddProduct>
@@ -47,13 +54,19 @@ const MyCreatedRouter = createBrowserRouter([
             {
                 path:"updateProduct/:id",
                 element:<PrivateUpdate> <UpdateProduct></UpdateProduct> </PrivateUpdate>,
-                loader: ({params}) => fetch(`https://automotive-server-site-sigma.vercel.app/product/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
             },
             {
                 path:'/myCart',
                 element:<PrivateMyCart><MyCart></MyCart></PrivateMyCart>,
-                // loader: () => fetch('https://automotive-server-site-sigma.vercel.app/addToCart')
+               
             },
+            
+            {
+                path : '/allCars',
+                element : <AllCars></AllCars>
+            },
+             
             {
                 path:'/signUp',
                 element: <SignUp></SignUp>

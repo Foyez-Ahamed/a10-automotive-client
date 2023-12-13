@@ -131,7 +131,20 @@ const Navbar = () => {
                 : ""
             }
           >
-            <li className="text-[16px] ml-4">Add Product</li>
+            <li className="text-[16px] ml-4">Add Car</li>
+          </NavLink>
+
+          <NavLink
+            to="/allCars"
+            className={({ isActive, isPending }) =>
+              isActive
+                ? "text-[#E02C6D] underline"
+                : isPending
+                ? "pending"
+                : ""
+            }
+          >
+            <li className="text-[16px] ml-4">All Cars</li>
           </NavLink>
 
           <NavLink

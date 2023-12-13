@@ -20,9 +20,8 @@ const AddProduct = () => {
 
     const addProduct = {image, name, rating, brandName, type, price, description};
 
-    console.log(addProduct);
 
-    fetch('https://automotive-server-site-sigma.vercel.app/brandsCategory', {
+    fetch('http://localhost:5000/brandsCategory', {
       method:'POST',
       headers: {
         'content-type' : 'application/json'
@@ -52,9 +51,9 @@ const AddProduct = () => {
         <div>
           {/* main div */}
 
-          <div>
+          {/* <div>
             <h1 className="text-center text-4xl font-medium">Add Product</h1>
-          </div>
+          </div> */}
 
           {/* form */}
           <div className="mt-10">
@@ -66,6 +65,7 @@ const AddProduct = () => {
                     type="text"
                     placeholder="Image url.."
                     name="image"
+                    required
                     className="input mt-2 w-full md:w-[390px] lg:w-[390px]"
                   />{" "}
                 </div>
@@ -76,6 +76,7 @@ const AddProduct = () => {
                     type="text"
                     placeholder="Name"
                     name="name"
+                    required
                     className="input mt-2  w-full md:w-[390px] lg:w-[390px]"
                   />{" "}
                 </div>
@@ -116,6 +117,7 @@ const AddProduct = () => {
                     type="text"
                     placeholder="Price"
                     name="price"
+                    required
                     className="input mt-2 w-full md:w-[390px] lg:w-[390px]"
                   />{" "}
                 </div>
@@ -148,7 +150,7 @@ const AddProduct = () => {
                 <label>
                   <input
                     type="submit"
-                    value="Add Product"
+                    value="Add Car"
                     placeholder="Enter photo url"
                     className="input input-bordered w-full bg-[#E02C6D] text-white font-bold"
                   />

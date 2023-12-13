@@ -4,9 +4,12 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
 const BrandCategories = ({ categoryProduct }) => {
+
+  console.log(categoryProduct);
+
   const { _id, image, name, brandName, type, price, rating } =
     categoryProduct || {};
-
+    
   return (
     <div>
       <div className="card dark:bg-black bg-base-100 shadow-xl">

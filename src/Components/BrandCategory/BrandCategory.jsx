@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import carousel1 from "../../assets/carousel1.jpg";
 import carouselTwo from "../../assets/carousel2.jpg";
 import carouselThree from "../../assets/carousel3 (2).jpg";
