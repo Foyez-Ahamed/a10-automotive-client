@@ -41,11 +41,6 @@ const MyCreatedRouter = createBrowserRouter([
                 path:'/brands',
                 element:<AddBrands></AddBrands>
             },
-             
-             {
-                path : '/brandCategory',
-                element : <BrandCategory></BrandCategory>
-             },
 
             {
                 path:'/addProduct',
